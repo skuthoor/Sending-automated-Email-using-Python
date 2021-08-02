@@ -2,14 +2,14 @@
 import smtplib
 #e = pd.read_excel("email.xlsx")
 #emails = e['emails'].values
-emails = ['sanjay109kuthoor@gmail.com','s109kuthoor@gmail.com']
+emails = [] # reciver mail address
 server = smtplib.SMTP("smtp.gmail.com", 587)
 server.starttls()
-server.login("sanjay.p@ug.cusat.ac.in","*****")
-msg = 'hello checking the script'
+server.login("@gmail.com","password") #senders email with password
+msg = 'message to be send'
 subject ='Hello There!'
 body="subject:{}\n\n{}".format(subject,msg)
 for email in emails :
-    server.sendmail("sanjay.p@ug.cusat.ac.in",email,body)
+    server.sendmail("@gmail",email,body)
 
 server.quit()
